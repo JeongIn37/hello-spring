@@ -1,10 +1,11 @@
-package hello.hellospring.domain;
+package hello.hellospring.repository;
 
-import hello.hellospring.repository.MemberRepository;
+import hello.hellospring.HelloSpringApplication;
+import hello.hellospring.domain.Member;
 
 import java.util.*;
 
-public class MemoryMemberRepository implements MemberRepository {
+public class MemoryMemberRepository implements HelloSpringApplication.MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;

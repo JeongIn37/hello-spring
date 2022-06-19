@@ -1,12 +1,17 @@
 package hello.hellospring.service;
+import hello.hellospring.HelloSpringApplication;
 import hello.hellospring.domain.Member;
-import hello.hellospring.domain.MemoryMemberRepository;
-import hello.hellospring.repository.MemberRepository;
+import hello.hellospring.repository.MemoryMemberRepository;
+
 import java.util.List;
 import java.util.Optional;
 public class MemberService {
-    private final MemberRepository memberRepository = new
+    private final HelloSpringApplication.MemberRepository memberRepository = new
             MemoryMemberRepository();
+
+    public MemberService(MemoryMemberRepository memberRepository) {
+    }
+
     /**
      * 회원가입
      */
