@@ -1,6 +1,6 @@
 package hello.hellospring.domain;
 
-import hello.hellospring.MemberRepository;
+import hello.hellospring.repository.MemberRepository;
 
 import java.util.*;
 
@@ -31,5 +31,10 @@ public class MemoryMemberRepository implements MemberRepository {
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    // 데이터를 clear
+    public void clearStore() {
+        store.clear();
     }
 }
